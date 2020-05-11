@@ -5,11 +5,15 @@ Este aplicativo ha sido desarrollado empleando PHP 7.2 y MySQL 5.7
 # Instalación
 
 Se debe copiar el contenido del repositorio en el directorio raiz de Apache2.
-Se debe ejecutar las instrucciones del archivo bd.sql.
+Se deben ejecutar las tres (3) instrucciones del archivo bd.sql en una consola de base de datos.
+
+## Conexión a la base de datos
+En el archivo config.php se encuentran configuradas las variables por defecto empleadas para la instalación, se deben
+modificar por las variables correspondientes al entorno donde se esté clonando el repositorio.
 
 ## MVC con Twig
 
-Para las vistas en el modelo MVC  de este programa se empleó el motor de plantillas Twig, se empleó composer para instalarlo pero no debería presentar inconvenintes una vez se clone el repositorio.
+Para las vistas en el modelo MVC  de este programa se empleó el motor de plantillas Twig.
 
 ## SoapClient
 

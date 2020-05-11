@@ -60,12 +60,26 @@
               <div class="input-group date">
               <button type="button" class="btn btn-warning" onclick="this.disabled='disabled';document.forms[0].submit()">Consultar End-Point</button>
               </div>
+                <br/>
+                <div class="input-group date">
+                  {%if conDatos %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <strong>la base de datos no está vacia</strong> Se podrá consultar los datos que actualmente se tienen almacenados
+                    </div>
+                    <button type="button" class="btn btn-warning" onclick="location.href='reports.php'">Ir a reportes</button>
+                  {%endif%}
+                  </div>
             {% else %}
               <h2>Consulta exitosa!</h2>
               <input type="hidden" name="Grabar" id="Grabar">
-              <p class="lead">Para la fecha {{ FechaInicial }} se podr&aacute;n almacenar {{ documentos|length }} documentos</p>
+              <p class="lead">2. Para la fecha {{ FechaInicial }} se podr&aacute;n almacenar {{ documentos|length }} documentos</p>
+
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Atención!</strong> Al grabar los datos se perderá cualquier información existente anteriormente en las tablas
+              </div>
+
               <div class="input-group date">
-                  <button type="button" class="btn btn-warning" onclick="this.disabled='disabled';document.forms[0].submit()">Persistir en base de datos</button>
+                  <button type="button" class="btn btn-warning" onclick="this.disabled='disabled';document.forms[0].submit()">Grabar en base de datos</button>
                 &nbsp;<button type="button" class="btn btn-primary" onclick="location.href='index.php'">Establecer otra fecha</button>
               </div>
             {% endif %}
